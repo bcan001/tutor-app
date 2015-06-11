@@ -21,6 +21,12 @@ User.create(id: 1, first_name: "Benjamin", last_name: "Caneba", email: "bcaneba@
 
 #create a school, add 3 courses to it
 School.create(id: 1, name: "Michigan State University", location: "East Lansing", state: "MI")
+School.create(id: 2, name: "Minnesota State University", location: "Minneapolis", state: "MN")
+School.create(id: 3, name: "Oklahoma State University", location: "Ok City", state: "OK")
+School.create(id: 4, name: "Delaware State University", location: "Dover", state: "DE")
+School.create(id: 5, name: "Oregon State University", location: "Beaverton", state: "OR")
+School.create(id: 6, name: "Detroit State University", location: "Detroit", state: "MI")
+
 Course.create(id: 1, name: "Accounting 101", description: "Basic Accounting principles", school_id: 1)
 Course.create(id: 2, name: "Mathematics 301", description: "Advanced Math principles", school_id: 1)
 Course.create(id: 3, name: "Engineering 400", description: "Intermediate Engineering principles", school_id: 1)

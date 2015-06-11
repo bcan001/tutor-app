@@ -12,11 +12,7 @@ class User < ActiveRecord::Base
 
 	has_many :posts
 
-
 	has_one :is_tutor
-
-
-
 
 
 	has_many :friendships
@@ -25,5 +21,11 @@ class User < ActiveRecord::Base
 	# determine what other users have added a user as a friend
 	has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
 	has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+
+
+	# validations for a user
+	validates(:username, uniqueness: true)
+	validates(:email, uniqueness: true)
+
 
 end

@@ -1,0 +1,8 @@
+<h1>Select a school</h1>
+
+<% @schools.each do |school| %>
+	<p><%= school.name %></p>
+<% end %>
+
+<h3>Don't See Your School?</h3>
+<%= link_to "Add Your School", new_school_path %>

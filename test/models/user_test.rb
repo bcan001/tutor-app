@@ -1,9 +1,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  fixtures :users
   test "user attributes must not be empty" do
   	user = User.new
   	assert user.invalid?
@@ -21,6 +19,12 @@ class UserTest < ActiveSupport::TestCase
   	assert user.tutor == false
   end
 
+  test "user is not valid without a unique username" do
+    # user fixtures
+    user = User.new(username: users(:three).username, first_name: "Benjamin")
+    assert user.invalid?
+    assert_equal ["username has already been taken"], user.errors[:username]
+  end
 
 
 end

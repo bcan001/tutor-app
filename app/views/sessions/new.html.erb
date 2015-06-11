@@ -1,0 +1,13 @@
+<h1>LOGIN</h1>
+
+<%= flash[:notice] %>
+
+<%= form_for(:session, url: { action: 'create' }) do |f| %>
+  <p>Username:</p>
+  <p><%= f.text_field(:username) %></p>
+  <p>Password:</p>
+  <p><%= f.password_field :password %></p>
+  <p><%= f.submit 'Log In' %></p>
+<% end %>
+
+<%= link_to 'Sign up', new_users_path %>
