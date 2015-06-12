@@ -15,9 +15,4 @@ class SchoolsController < ApplicationController
 	end
 	def destroy
 	end
-
-	def select
-		@user = User.find(session[:user_id]) if session[:user_id]
-		@schools = School.all
-	end
 end

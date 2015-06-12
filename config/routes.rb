@@ -12,9 +12,20 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/users/:id', to: 'users#show', as: 'user'
 
-  get '/selectschool', to: 'schools#select', as: 'select_school'
-
   resources :schools
+
+
+  get '/users/:id/selectschool', to: 'user_schools#new', as: 'select_school'
+  post '/users/:id/selectschool', to: 'user_schools#create', as: 'user_schools'
+  delete '/users/:id/selectschool', to: 'user_schools#destroy', as: 'destroy_school_assoc'
+  # post '/users/:friend_id/friendships', to: 'friendships#create', as: 'friendships'
+  # delete '/users/:friend_id/friendships', to: 'friendships#destroy', as: 'destroy_friend'
+  # patch '/users/:friend_id/friendships', to: 'friendships#accept_friend', as: 'accept_friendship'
+
+
+  
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

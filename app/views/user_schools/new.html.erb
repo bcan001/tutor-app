@@ -1,0 +1,10 @@
+<h1>Select a school</h1>
+
+<%= form_for @user_school do |f| %>
+	<%= f.select :school_id, options_for_select(@schools) %>
+	<%= f.submit 'Select School' %>
+<% end %>
+
+
+<h3>Don't See Your School?</h3>
+<%= link_to "Add Your School", new_school_path %>

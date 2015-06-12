@@ -1,0 +1,13 @@
+<h1>My profile page</h1>
+
+<h3>my profile</h3>
+<p>First Name: <%= @user.first_name %></p>
+<p>Last Name: <%= @user.last_name %></p>
+<p>Email: <%= @user.email %></p>
+<p>Phone: <%= @user.phone %></p>
+<p>Username: <%= @user.username %></p>
+
+<h3>my schools</h3>
+<% @schools.each do |s| %>
+	<h4><%= link_to s.name, school_path(s) %></h4>
+<% end %>

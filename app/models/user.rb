@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
 	has_one :is_tutor
 
 
+
 	has_many :friendships
 	has_many :friends, :through => :friendships
 
