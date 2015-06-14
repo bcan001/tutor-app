@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 		@user = User.find_by(:username => session_params[:username]).try(:authenticate, session_params[:password])
 		if @user
 			session[:user_id] = @user.id
-			redirect_to schools_path
+			redirect_to user_path(@user)
 		else
 			flash[:notice] = "Please enter correct credentials"
 			render 'sessions/new'

@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/users/:id', to: 'users#show', as: 'user'
 
-  resources :schools
+  resources :schools do
+    resources :courses
+  end
 
 
   get '/users/:id/selectschool', to: 'user_schools#new', as: 'select_school'

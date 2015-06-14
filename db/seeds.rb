@@ -31,6 +31,18 @@ Course.create(id: 1, name: "Accounting 101", description: "Basic Accounting prin
 Course.create(id: 2, name: "Mathematics 301", description: "Advanced Math principles", school_id: 1)
 Course.create(id: 3, name: "Engineering 400", description: "Intermediate Engineering principles", school_id: 1)
 
+Course.create(id: 4, name: "Accounting 101", description: "Basic Accounting principles", school_id: 2)
+Course.create(id: 5, name: "Mathematics 301", description: "Advanced Math principles", school_id: 2)
+
+Course.create(id: 6, name: "Accounting 101", description: "Basic Accounting principles", school_id: 3)
+Course.create(id: 7, name: "Mathematics 301", description: "Advanced Math principles", school_id: 3)
+
+Course.create(id: 8, name: "Accounting 101", description: "Basic Accounting principles", school_id: 4)
+Course.create(id: 9, name: "Mathematics 301", description: "Advanced Math principles", school_id: 4)
+
+Course.create(id: 10, name: "Accounting 101", description: "Basic Accounting principles", school_id: 5)
+Course.create(id: 11, name: "Mathematics 301", description: "Advanced Math principles", school_id: 5)
+
 #make our only user a student of the school we created
 UserSchool.create(user_id: 1, school_id: 1)
 #make our only user take accounting course

@@ -1,11 +1,8 @@
 <h1><%= @school.name %></h1>
 <h3><%= @school.location %>, <%= @school.state %></h3>
 
-
-
-
-
-
-
-
+<h2>Available Courses:</h2>
+<% @courses.each do |c| %>
+	<p><%= link_to c.name, school_course_path(@school,c) %></p>
+<% end %>
 
