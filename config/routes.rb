@@ -13,7 +13,9 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: 'user'
 
   resources :schools do
-    resources :courses
+    resources :courses do
+      resources :posts
+    end
   end
 
 
