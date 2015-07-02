@@ -6,6 +6,6 @@ class School < ActiveRecord::Base
 	# has many Courses
 	has_many :courses
 
-	has_many :posts
+	has_many :postss
 	
 end
