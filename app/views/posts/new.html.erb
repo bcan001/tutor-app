@@ -1,1 +1,15 @@
-<h3>new post</h3>
+<h1><%= @school.name %></h1>
+<h2><%= @course.name %></h2>
+
+<h3>new post for this course</h3>
+
+<%= form_for([@school,@course,@course.posts.build]) do |f| %>
+	<p><%= f.label :title, 'title:' %></p>
+  <p><%= f.text_field :title %></p>
+
+  <p><%= f.label :description, 'description:' %></p>
+  <p><%= f.text_field :description %></p>
+
+  <p><%= f.submit 'Create a New Post' %></p>
+<% end %>
+
