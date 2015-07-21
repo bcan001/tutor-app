@@ -1,1 +1,16 @@
 <h1>Add a New School</h1>
+
+<%= form_for @school do |f| %>
+
+  <p><%= f.label :name, 'name:' %></p>
+  <p><%= f.text_field :name %></p>
+
+  <p><%= f.label :location, 'location:' %></p>
+  <p><%= f.text_field :location %></p>
+
+  <p><%= f.label :state, 'state:' %></p>
+  <p><%= f.text_field :state %></p>
+
+  <p><%= f.submit 'create school' %></p>
+
+<% end %>

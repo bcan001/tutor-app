@@ -7,8 +7,18 @@ class SchoolsController < ApplicationController
 		@courses = @school.courses.all
 	end
 	def new
+		@school = School.new
 	end
 	def create
+		@user = User.find(session[:user_id]) if session[:user_id]
+		@school = School.new(school_params)
+		if @school.save
+			flash[:notice] = "School Successfully created"
+			redirect_to user_path(@user)
+		else
+			@error = "Please fill in the fields correctly to create a new school"
+			render 'new'
+		end
 	end
 	def edit
 	end
@@ -16,4 +26,10 @@ class SchoolsController < ApplicationController
 	end
 	def destroy
 	end
+
+	private
+	def school_params
+		params.require(:school).permit!
+	end
+
 end

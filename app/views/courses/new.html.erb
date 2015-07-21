@@ -1,0 +1,13 @@
+<p>create a new course</p>
+
+<!-- [@school,@course,@course.posts.build] -->
+
+<%= form_for(:course) do |f| %>
+	<p><%= f.label :name, 'name:' %></p>
+  <p><%= f.text_field :name %></p>
+
+  <p><%= f.label :description, 'description:' %></p>
+  <p><%= f.text_field :description %></p>
+
+  <p><%= f.submit 'Create a New course' %></p>
+<% end %>

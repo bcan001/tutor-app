@@ -8,7 +8,9 @@ class UserSchoolsController < ApplicationController
 	
 	def create
 		@user = User.find(session[:user_id]) if session[:user_id]
-		@user_school = User.find(session[:user_id]).user_school.build(:school_id => params[:school_id])
+		# binding.pry
+		@user_school = User.find(session[:user_id]).user_school.build(:school_id => params[:user_school][:school_id])
+		# binding.pry
 		if @user_school.save
 			flash[:notice] = "school added to your list"
 			redirect_to user_path(@user)

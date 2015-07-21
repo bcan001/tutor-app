@@ -8,8 +8,13 @@ class CoursesController < ApplicationController
 		@school = @course.school
 	end
 	def new
+		# binding.pry
+		# @course = Course.new
+		# @school = @course.school
+
 	end
 	def create
+
 	end
 	def edit
 	end
