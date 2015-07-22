@@ -7,9 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "Logout", logout_path %>
+<%= render 'layouts/header' %>
 
-<%= yield %>
+<div style="text-align:center;">
+	<%= yield %>
+</div>
 
 </body>
 </html>

@@ -30,6 +30,14 @@ class UsersController < ApplicationController
 	def destroy
 	end
 
+	def profile_schools
+		@user = User.find(session[:user_id]) if session[:user_id]
+		@schools = @user.schools
+	end
+
+	def profile_courses
+	end
+
 
 	private
 	def user_params

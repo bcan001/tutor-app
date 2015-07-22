@@ -18,6 +18,14 @@ Rails.application.routes.draw do
     end
   end
 
+  # get '/becometutor', to: 'is_tutors#new', as: 'new_tutor'
+  # post '/becometutor', to: 'is_tutor#create'
+
+  get '/myschools', to: 'users#profile_schools', as: 'my_schools'
+  get '/myschools', to: 'users#profile_courses', as: 'my_courses'
+
+
+
 
   get '/users/:id/selectschool', to: 'user_schools#new', as: 'select_school'
   post '/users/:id/selectschool', to: 'user_schools#create', as: 'user_schools'

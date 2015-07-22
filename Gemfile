@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem "therubyracer"
+gem "less-rails"
+gem 'twitter-bootstrap-rails'
+
+
 
 gem 'pry-rails'
 gem 'pry-nav'
