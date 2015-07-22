@@ -9,4 +9,6 @@ class Course < ActiveRecord::Base
 
 	has_many :posts
 	has_many :is_tutors
+
+
 end
