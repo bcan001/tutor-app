@@ -2,12 +2,14 @@
 
 <!-- [@school,@course,@course.posts.build] -->
 
-<%= form_for(:course) do |f| %>
+<%= form_for(@course, as: :course, url: school_courses_path) do |f| %>
 	<p><%= f.label :name, 'name:' %></p>
   <p><%= f.text_field :name %></p>
 
   <p><%= f.label :description, 'description:' %></p>
   <p><%= f.text_field :description %></p>
+
+  <%= f.hidden_field :school_id, :value => params[:school_id] %>
 
   <p><%= f.submit 'Create a New course' %></p>
 <% end %>
