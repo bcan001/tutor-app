@@ -1,6 +1,12 @@
 <h1>My profile page</h1>
 
 <h3>my profile</h3>
+
+<div id="profile-pic">
+	<%= gravatar_image_tag(@user.email) %>
+</div>
+
+</br>
 <p>First Name: <%= @user.first_name %></p>
 <p>Last Name: <%= @user.last_name %></p>
 <p>Email: <%= @user.email %></p>
@@ -13,5 +19,11 @@
 <% end %>
 
 <h2><%= link_to "Add a new school to my list", select_school_path(@user)%></h2>
+
+
+</br>
+<h3>my saved courses:</h3>
+
+
 
 

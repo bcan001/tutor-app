@@ -35,8 +35,6 @@ class UsersController < ApplicationController
 		@schools = @user.schools
 	end
 
-	def profile_courses
-	end
 
 
 	private

@@ -4,6 +4,8 @@ gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
 
+gem 'gravatar_image_tag'
+
 
 
 gem 'pry-rails'

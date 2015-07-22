@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'sessions#new'
+  root 'schools#index'
   # resources :users
 
   get '/login', to: 'sessions#new', as: 'login'
@@ -21,8 +21,10 @@ Rails.application.routes.draw do
   # get '/becometutor', to: 'is_tutors#new', as: 'new_tutor'
   # post '/becometutor', to: 'is_tutor#create'
 
-  get '/myschools', to: 'users#profile_schools', as: 'my_schools'
-  get '/myschools', to: 'users#profile_courses', as: 'my_courses'
+  get '/myschools/:id', to: 'users#profile_schools', as: 'my_schools'
+  get '/about', to: 'users#about', as: 'about'
+
+
 
 
 

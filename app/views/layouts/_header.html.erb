@@ -14,12 +14,17 @@
     <div id="navbarCollapse" class="collapse navbar-collapse">
         <ul class="nav nav-justified" id="myNav">
             <% if current_user %>
+                <li><%= link_to 'home', root_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
+                <li><%= link_to 'about', about_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
+
                 <li><%= link_to 'my profile', user_path(current_user), :style => "text-decoration: none;color:black;font-size:22px;" %></li>
-                <li><%= link_to 'my schools', my_schools_path(current_user), :style => "text-decoration: none;color:black;font-size:22px;" %></li>
-                <li><%= link_to 'my courses', my_courses_path(current_user), :style => "text-decoration: none;color:black;font-size:22px;" %></li>
+                <li><%= link_to 'my activity', my_schools_path(current_user), :style => "text-decoration: none;color:black;font-size:22px;" %></li>
                 <li><%= link_to 'logout', logout_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
 
             <% else %>
+                <li><%= link_to 'home', root_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
+                <li><%= link_to 'about', about_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
+                
                 <li><%= link_to 'login', login_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
                 <li><%= link_to 'sign up', new_users_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
             <% end %>

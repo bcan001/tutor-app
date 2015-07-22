@@ -1,12 +1,16 @@
 <h1><%= @school.name %></h1>
 <h1><%= @course.name %></h1>
 
+<h3>about this course:</h3>
+<p><%= @course.description %></p>
+
 <p><%= link_to "create new post", new_school_course_post_path(@course,@school)%></p>
 
 <h3>Posts about this course:</h3>
 
 <% @course.posts.each do |c| %>
-	<p><%= c.title %></p>
+	<p><strong><%= c.title %></strong></p>
 	<p><%= c.description %></p>
+	<p>~ by <%= User.where({id: c.user_id}).first.username %></p>
 <% end %>
 
