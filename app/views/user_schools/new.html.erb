@@ -1,9 +1,11 @@
-<h1>Select a school</h1>
+<h2>Select a School to add to your list:</h2>
+</br>
 
 <%= form_for @user_school do |f| %>
 	<%= f.select :school_id, options_from_collection_for_select(@schools, 'id', 'name',1) %>
 	<%= f.submit 'Select School' %>
 <% end %>
 
+</br>
 <h3>Don't See Your School?</h3>
 <%= link_to "Add Your School", new_school_path %>

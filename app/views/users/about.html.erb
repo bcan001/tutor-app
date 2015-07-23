@@ -1,3 +1,21 @@
-<h1>about</h1>
+<h1>About</h1>
+</br>
+</br>
 
-<p>This is a site where users can discuss certain courses they are taking at different universities.</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+    	<p>This is a site where users can discuss certain courses they are taking at different universities. The site will be a social network for people who want to collaborate on homework, as well as help each other in current courses.</p>
+    </div>
+
+    <div class="col-md-6">
+			<h4>Current Student Count: <%= User.all.count %></h4>
+			<h4>Current Schools Supported: <%= School.all.count %></h4>
+			<h4>Current Courses Discussed: <%= Course.all.count %></h4>
+			<h4>Current Post Count: <%= Post.all.count %></h4>
+
+    </div>
+
+   </div>
+</div>

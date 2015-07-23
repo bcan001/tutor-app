@@ -7,11 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 <%= render 'layouts/header' %>
 
-<div style="text-align:center;">
-	<%= yield %>
+<div class="container" id="central-body">
+	<div style="text-align:center;">
+		<%= yield %>
+	</div>
 </div>
+
+<%= render 'layouts/footer' %>
 
 </body>
 </html>

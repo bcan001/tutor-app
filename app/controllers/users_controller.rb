@@ -33,6 +33,7 @@ class UsersController < ApplicationController
 	def profile_schools
 		@user = User.find(session[:user_id]) if session[:user_id]
 		@schools = @user.schools
+		@courses = Course.all
 	end
 
 

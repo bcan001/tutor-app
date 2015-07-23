@@ -1,12 +1,27 @@
 <h1><%= @school.name %></h1>
 <h3><%= @school.location %>, <%= @school.state %></h3>
 
-<h2>Available Courses:</h2>
-<% @courses.each do |c| %>
-	<p><%= link_to c.name, school_course_path(@school,c) %></p>
-<% end %>
 
 </br>
-<p>create a new course</p>
-<%= link_to 'new course', new_school_course_path(@school) %>
+</br>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+    	<h2>Available Courses:</h2>
+			<% @courses.each do |c| %>
+				<p><%= link_to c.name, school_course_path(@school,c) %></p>
+			<% end %>
+      </br>
+      <h3>Don't see your course?</h3>
+      <%= link_to 'add your course', new_school_course_path(@school) %>
+
+    </div>
+
+    <div class="col-md-6">
+      <h3>Students at <%= @school.name %>:</h3>
+			
+    </div>
+
+   </div>
+</div>
