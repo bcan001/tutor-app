@@ -7,7 +7,7 @@
     <div class="col-md-6">
 			<h3>My Recent Posts:</h3>
 			</br>
-			<% @user.posts.each do |p| %>
+			<% @user.posts.limit(10).each do |p| %>
 				<p><%= p.school.name %></p>
 				<p><%= p.course.name %></p>
 				<p><strong><%= p.title %></strong></p>
@@ -15,10 +15,21 @@
 			<% end %>
     </div>
 
+		<%= link_to 'view all students online here', users_show_path %>
     <div class="col-md-6">
-			<h3>My Friends:</h3>
-			</br>
+			<h3>People I'm Following:</h3>
 
+			<% @user.friendships.each do |f| %>
+				<p><%= f.friend.username %></p>
+				<p><%= f.friend.email %></p>
+				<% f.friend.schools.each do |p| %>
+					<p><%= p.name %></p>
+				<% end %>
+				<p><%= link_to 'Remove', destroy_friend_path(f), :method => :delete %></p>
+				</br>
+			<% end %>
+
+			</br>
 
     </div>
 

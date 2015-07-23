@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
 	def index
+		@users = User.all
 	end
 	def show
 		@user = User.find(session[:user_id]) if session[:user_id]
-		# binding.pry
 		@schools = @user.schools
-		# binding.pry
 	end
 	def new
 		@user = User.new
@@ -16,7 +15,6 @@ class UsersController < ApplicationController
 		if @user.save
 			session[:user_id] = @user.id
 			flash[:notice] = "User Successfully created"
-			# redirect_to select_school_path(session[:user_id])
 			redirect_to user_path(@user)
 		else
 			@error = "Please fill in the fields correctly to create a user"
@@ -35,8 +33,6 @@ class UsersController < ApplicationController
 		@schools = @user.schools
 		@courses = Course.all
 	end
-
-
 
 	private
 	def user_params

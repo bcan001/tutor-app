@@ -1,24 +1,30 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" style="height: 100px;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to 'CourseDiscuss', root_path, class: 'brand' %>
+      <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle" style="color:black;">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to(image_tag("logo.jpg", :alt => "pic", style: "width:500px; height:97px;"), image_path(root_path, class: "img-responsive")) %>
     </div>
-    <div>
-      <ul class="nav navbar-nav pull-right">
- 
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav pull-right" style="padding-top: 20px;">
         <% if current_user %>
-            <li><%= link_to 'Home', root_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
-            <li><%= link_to 'About', about_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
+            <li><%= link_to 'Home', root_path, :style => "text-decoration: none;color:#3A3A3A;font-size:28px;" %></li>
+            <li><%= link_to 'About', about_path, :style => "text-decoration: none;color:#3A3A3A;font-size:28px;" %></li>
 
-            <li><%= link_to 'My Profile', user_path(current_user), :style => "text-decoration: none;color:black;font-size:22px;" %></li>
-            <li><%= link_to 'My Activity', my_schools_path(current_user), :style => "text-decoration: none;color:black;font-size:22px;" %></li>
-            <li><%= link_to 'Logout', logout_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
+            <li><%= link_to 'My Profile', user_path(current_user), :style => "text-decoration: none;color:#3A3A3A;font-size:28px;" %></li>
+            <li><%= link_to 'My Activity', my_schools_path(current_user), :style => "text-decoration: none;color:#3A3A3A;font-size:28px;" %></li>
+            <li><%= link_to 'Logout', logout_path, :style => "text-decoration: none;color:#3A3A3A;font-size:28px;" %></li>
         <% else %>
-            <li><%= link_to 'Home', root_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
-            <li><%= link_to 'About', about_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
+            <li><%= link_to 'Home', root_path, :style => "text-decoration: none;color:#3A3A3A;font-size:28px;" %></li>
+            <li><%= link_to 'About', about_path, :style => "text-decoration: none;color:#3A3A3A;font-size:28px;" %></li>
             
-            <li><%= link_to 'Login', login_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
-            <li><%= link_to 'Sign up', new_users_path, :style => "text-decoration: none;color:black;font-size:22px;" %></li>
+            <li><%= link_to 'Login', login_path, :style => "text-decoration: none;color:#3A3A3A;font-size:28px;" %></li>
+            <li><%= link_to 'Sign up', new_users_path, :style => "text-decoration: none;color:#3A3A3A;font-size:28px;" %></li>
 
         <% end %>
 
