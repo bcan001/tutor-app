@@ -1,10 +1,25 @@
 <h2>Select a School to add to your list:</h2>
 </br>
 
-<%= form_for @user_school do |f| %>
-	<%= f.select :school_id, options_from_collection_for_select(@schools, 'id', 'name',1) %>
-	<%= f.submit 'Select School' %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+
+    <div class="col-md-6">
+
+      <div class="well" style="background:white;">
+
+				<%= form_for @user_school do |f| %>
+					<%= f.select :school_id, options_from_collection_for_select(@schools, 'id', 'name',1) %>
+					<%= f.submit 'Select School', class: "btn btn-primary" %>
+				<% end %>
+			</div>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div>
+</div>
 
 </br>
 <h3>Don't See Your School?</h3>

@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get '/myschools/:id', to: 'users#profile_schools', as: 'my_schools'
   get '/about', to: 'users#about', as: 'about'
 
-
+  get '/allschools', to: 'schools#all_schools', as: 'all_schools'
 
 
 

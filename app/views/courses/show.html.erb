@@ -4,7 +4,11 @@
 <h3>about this course:</h3>
 <p><%= @course.description %></p>
 
-<p><%= link_to "create new post", new_school_course_post_path(@course,@school)%></p>
+<% if current_user %>
+	<p><%= link_to "create new post", new_school_course_post_path(@course,@school)%></p>
+<% else %>
+	<p><%= link_to "create new post", login_path %></p>
+<% end %>
 
 <h3>Posts about this course:</h3>
 

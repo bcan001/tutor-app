@@ -1,15 +1,28 @@
 <h1><%= @school.name %></h1>
-<h2><%= @course.name %></h2>
+<h3><%= @course.name %></h3>
 
-<h3>new post for this course</h3>
+<h4>Create a new post for this course</h4>
+</br>
 
-<%= form_for([@school,@course,@course.posts.build]) do |f| %>
-	<p><%= f.label :title, 'title:' %></p>
-  <p><%= f.text_field :title %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
 
-  <p><%= f.label :description, 'description:' %></p>
-  <p><%= f.text_area :description, size: "60x12"  %></p>
+    <div class="col-md-6">
 
-  <p><%= f.submit 'Create a New Post' %></p>
-<% end %>
+      <div class="well" style="background:white;">
+				<%= form_for([@school,@course,@course.posts.build]) do |f| %>
+				  <p><%= f.text_field :title, :size => 40, :placeholder => "Title"   %></p>
 
+				  <p><%= f.text_area :description, size: "60x12", :placeholder => "Description"   %></p>
+
+				  <p><%= f.submit 'Create a New Post' %></p>
+				<% end %>
+
+			</div>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div>
+</div>

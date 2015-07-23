@@ -9,12 +9,20 @@
   <div class="row">
     <div class="col-md-6">
     	<h2>Available Courses:</h2>
-			<% @courses.each do |c| %>
-				<p><%= link_to c.name, school_course_path(@school,c) %></p>
-			<% end %>
+      </br>
+      <div class="well" style="background:white;">
+
+  			<% @courses.each do |c| %>
+  				<p><%= link_to c.name, school_course_path(@school,c) %></p>
+  			<% end %>
+      </div>
       </br>
       <h3>Don't see your course?</h3>
-      <%= link_to 'add your course', new_school_course_path(@school) %>
+      <% if current_user %>
+        <%= link_to 'add your course', new_school_course_path(@school) %>
+      <% else %>
+        <%= link_to 'add your course', login_path %>
+      <% end %>
 
     </div>
 

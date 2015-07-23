@@ -1,13 +1,32 @@
 <h1>Login to CourseDiscuss</h1>
+</br>
 
-<%= flash[:notice] %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
 
-<%= form_for(:session, url: { action: 'create' }) do |f| %>
-  <p>Username</p>
-  <p><%= f.text_field(:username) %></p>
-  <p>Password</p>
-  <p><%= f.password_field :password %></p>
-  <p><%= f.submit 'Log In', class: "btn btn-primary" %></p>
-<% end %>
+ 		<div class="col-md-6">
+	  
+			<div class="well" style="background:white;">
 
-<%= link_to 'Sign up', new_users_path %>
+				<%= flash[:notice] %>
+
+				<%= form_for(:session, url: { action: 'create' }) do |f| %>
+				
+				  <p><%= f.text_field(:username, :size => 40, :placeholder => "Username") %></p>
+			
+				  <p><%= f.password_field :password, :size => 40, :placeholder => "Password" %></p>
+				  <p><%= f.submit 'Log In', class: "btn btn-primary" %></p>
+				<% end %>
+			</div>
+
+ 		</div>
+ 		<div class="col-md-3">
+ 		</div>
+	</div>
+</div>
+
+</br>
+<h5>Don't have an account?</h5>
+<%= link_to 'Sign up for an account', new_users_path %>

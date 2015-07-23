@@ -1,17 +1,30 @@
 <h1>Add a New School</h1>
 </br>
 
-<%= form_for @school do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
 
-  <p><%= f.label :name, 'name:' %></p>
-  <p><%= f.text_field :name %></p>
+    <div class="col-md-6">
 
-  <p><%= f.label :location, 'location:' %></p>
-  <p><%= f.text_field :location %></p>
+      <div class="well" style="background:white;">
 
-  <p><%= f.label :state, 'state:' %></p>
-  <p><%= f.text_field :state %></p>
+				<%= form_for @school do |f| %>
 
-  <p><%= f.submit 'create school' %></p>
+				  <p><%= f.text_field :name, :size => 40, :placeholder => "School Name"  %></p>
 
-<% end %>
+				  <p><%= f.text_field :location, :size => 40, :placeholder => "Location City"  %></p>
+
+				  <p><%= f.text_field :state, :size => 40, :placeholder => "Location State"  %></p>
+
+				  <p><%= f.submit 'create school', class: "btn btn-primary" %></p>
+
+				<% end %>
+
+			</div>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div>
+</div>

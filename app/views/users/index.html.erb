@@ -1,7 +1,16 @@
 <h2>All Students:</h2>
 
+<h5>This is a list of all the students that have signed up to use the website.</h5>
+</br>
+
+
 <% @users.each do |u| %>
-	<%= gravatar_image_tag(u.email) %>
-	<p><%=u.username %></p>
-	<p><%= link_to "Add As Friend", friendships_path(:friend_id => u), :method => :post %></p>
+	<div class="inline">
+		<div class="well" style="background:white;">
+			<%= gravatar_image_tag(u.email) %>
+			<p><%=u.username %></p>
+			<p><%= link_to "Add As Friend", friendships_path(:friend_id => u), :method => :post %></p>
+		</div>
+	</div>
 <% end %>
+

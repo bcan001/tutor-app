@@ -3,14 +3,28 @@
 
 <!-- [@school,@course,@course.posts.build] -->
 
-<%= form_for(@course, as: :course, url: school_courses_path) do |f| %>
-	<p><%= f.label :name, 'name:' %></p>
-  <p><%= f.text_field :name %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+    </div>
 
-  <p><%= f.label :description, 'description:' %></p>
-  <p><%= f.text_field :description %></p>
+    <div class="col-md-6">
 
-  <%= f.hidden_field :school_id, :value => params[:school_id] %>
+      <div class="well" style="background:white;">
 
-  <p><%= f.submit 'Create a New course' %></p>
-<% end %>
+				<%= form_for(@course, as: :course, url: school_courses_path) do |f| %>
+				  <p><%= f.text_field :name, :size => 40, :placeholder => "Name"  %></p>
+
+				  <p><%= f.text_area :description, size: "60x12", :placeholder => "Description"  %></p>
+
+				  <%= f.hidden_field :school_id, :value => params[:school_id] %>
+
+				  <p><%= f.submit 'Create a New course', class: "btn btn-primary" %></p>
+				<% end %>
+
+			</div>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div>
+</div>
