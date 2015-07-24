@@ -30,7 +30,7 @@ class SchoolsController < ApplicationController
 	end
 
 	def all_schools
-		@schools = School.all.order("name")
+		@schools = School.order("name").paginate(:page => params[:page], :per_page => 500)
 	end
 
 	private
