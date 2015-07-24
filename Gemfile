@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'populator'
+gem 'faker'
+
+
+
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails'

@@ -2,7 +2,7 @@ class UserSchoolsController < ApplicationController
 
 	def new
 		@user = User.find(session[:user_id]) if session[:user_id]
-		@schools = School.all
+		@schools = School.all.order("name")
 		@user_school = UserSchool.new
 	end
 	

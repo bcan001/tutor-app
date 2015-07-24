@@ -1,6 +1,6 @@
 class SchoolsController < ApplicationController
 	def index
-		@schools = School.all
+		@schools = School.all.order("name")
 	end
 	def show
 		@school = School.find(params[:id])
@@ -30,7 +30,7 @@ class SchoolsController < ApplicationController
 	end
 
 	def all_schools
-		@schools = School.all
+		@schools = School.all.order("name")
 	end
 
 	private
