@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 	has_many :courses, :through => :user_course
 
 
-	has_many :posts
+	has_many :posts, dependent: :destroy
 
 	has_one :is_tutor
 
@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
 
 
 
+	has_many :favorites, dependent: :destroy
 
 
 end

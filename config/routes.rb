@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :schools do
     resources :courses do
+      post '/favorite', to: 'favorites#create'
       resources :posts
     end
   end
@@ -25,6 +26,8 @@ Rails.application.routes.draw do
   get '/about', to: 'users#about', as: 'about'
 
   get '/allschools', to: 'schools#all_schools', as: 'all_schools'
+
+
 
 
 

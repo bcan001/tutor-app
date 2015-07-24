@@ -1,11 +1,35 @@
 <% if current_user %>
   <h1>Welcome to CourseDiscuss, <%= current_user.username %>!</h1>
+  </br>
+  <div class="well" style="background:white;">
+      <h3>News Feed</h3>
+      </br>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">  
+              <% current_user.favorites.limit(5).reverse.each do |f| %>
+                <% if Course.find(f.course_id).posts.last %>   
+                   <p>
+                    <%= User.find(Course.find(f.course_id).posts.last.user_id).username %> posted in <%= link_to Course.find(f.course_id).name, school_course_path(School.find(Course.find(f.course_id).school_id),Course.find(f.course_id)) %> at <%= School.find(Course.find(f.course_id).school_id).name %></p>
+                <% end %>
+              <% end %>
+          </div>
+          <div class="col-md-6">
+            <% User.all.limit(5).reverse.each do |u| %>
+              <p><%= u.created_at %>: <%= u.username %> joined the site!</p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+  </br>
 <% else %>
   <h1>Welcome to CourseDiscuss!</h1>
+  <h4><%= link_to 'Login', login_path %> or <%= link_to 'Sign Up', new_users_path %></h4>
+  </br>
 <% end %>
 
-</br>
-</br>
+
 
 
 <div class="container">
@@ -24,8 +48,6 @@
         </div>
       </div>
       </br>
-
-
     </div>
 
     <div class="col-md-5">
@@ -44,9 +66,9 @@
       </br>
 			<h4>Don't See Your School?</h4>
       <% if current_user %>
-			 <%= link_to 'get connected!', new_school_path %>
+			 <%= link_to 'Connect Your School!', new_school_path, class: 'btn btn-primary'  %>
       <% else %>
-        <%= link_to 'get connected!', login_path %>
+        <%= link_to 'Connect Your School!', login_path, class: 'btn btn-primary'  %>
       <% end %>
     </div>
 

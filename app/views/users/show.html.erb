@@ -38,7 +38,13 @@
 
 
 					</br>
-					<h3>My Saved Courses:</h3>
+					<h3>My Favorite Courses:</h3>
+					</br>
+					<div class="well" style="background:white;">
+						<% @user.favorites.each do |f| %>
+							<p><%= link_to Course.find(f.course_id).name, school_course_path(School.find(Course.find(f.course_id).school_id),Course.find(f.course_id)) %>, <%= School.find(Course.find(f.course_id).school_id).name %></p>
+						<% end %>
+					</div>
 
         </div>
 
