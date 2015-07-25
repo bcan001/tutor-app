@@ -7,7 +7,7 @@
 <% end %>
 </br>
 
-<h3>about this course:</h3>
+<h3>Course Description:</h3>
 <p><%= @course.description %></p>
 </br>
 
@@ -28,6 +28,7 @@
      
 			<% @course.posts.each do |c| %>
 				<div class="well" style="background:white;">
+					<p><strong><%= display_datetime(c.created_at) %></strong></p>
 					<p><strong><%= c.title %></strong></p>
 					<p><%= c.description %></p>
 					<p>~ by <%= User.where({id: c.user_id}).first.username %></p>

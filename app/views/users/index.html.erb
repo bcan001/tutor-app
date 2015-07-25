@@ -9,8 +9,11 @@
 		<div class="well" style="background:white;">
 			<%= gravatar_image_tag(u.email) %>
 			<p><%=u.username %></p>
-			<p><%= link_to "Add As Friend", friendships_path(:friend_id => u), :method => :post %></p>
+			<p><%= School.find(u.user_school.first.school_id).name if u.user_school.first%></p>
+			<p><%= link_to "Follow #{u.username}", friendships_path(:friend_id => u), :method => :post %></p>
 		</div>
 	</div>
 <% end %>
+<p><%= will_paginate @users, renderer: BootstrapPagination::Rails %></p>
+
 

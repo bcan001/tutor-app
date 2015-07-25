@@ -9,6 +9,7 @@
 			</br>
 			<% @user.posts.limit(5).each do |p| %>
 				<div class="well" style="background:white;">
+					<p><strong><%= display_datetime(p.created_at) %></strong></p>
 					<p><%= p.school.name %></p>
 					<p><%= p.course.name %></p>
 					<p><strong><%= p.title %></strong></p>
@@ -21,20 +22,21 @@
     <div class="col-md-6">
 			<h3>People I'm Following:</h3>
 			</br>
-			<% @user.friendships.each do |f| %>
-				<div class="well" style="background:white;">
-					<%= gravatar_image_tag(f.friend.email) %>
-					
-					<p><%= f.friend.username %></p>
-					<p><%= f.friend.email %></p>
-					<% f.friend.schools.limit(1).each do |p| %>
-						<p><%= p.name %></p>
-					<% end %>
-					<p><%= link_to 'Remove', destroy_friend_path(f), :method => :delete %></p>
-				</div>
-				</br>
-			<% end %>
-
+			<div class="inline">
+				<% @user.friendships.each do |f| %>
+					<div class="well" style="background:white;">
+						<%= gravatar_image_tag(f.friend.email) %>
+						
+						<p><%= f.friend.username %></p>
+						<p><%= f.friend.email %></p>
+						<% f.friend.schools.limit(1).each do |p| %>
+							<p><%= p.name %></p>
+						<% end %>
+						<p><%= link_to 'Remove', destroy_friend_path(f), :method => :delete %></p>
+					</div>
+					</br>
+				<% end %>
+			</div>
 			</br>
 			<%= link_to 'view all students online here', users_show_path %>
     </div>

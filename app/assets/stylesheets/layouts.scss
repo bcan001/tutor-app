@@ -34,3 +34,10 @@ body {
 	  padding-right: 20px;
 	}
 }
+
+
+
+.nav li:hover {
+  transform: scale(1.2);
+  transition: transform .25s ease;
+}

@@ -7,17 +7,20 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">  
-              <% current_user.favorites.limit(5).reverse.each do |f| %>
-                <% if Course.find(f.course_id).posts.last %>   
-                   <p>
-                    <%= User.find(Course.find(f.course_id).posts.last.user_id).username %> posted in <%= link_to Course.find(f.course_id).name, school_course_path(School.find(Course.find(f.course_id).school_id),Course.find(f.course_id)) %> at <%= School.find(Course.find(f.course_id).school_id).name %></p>
-                <% end %>
+              
+              <% User.all.limit(5).reverse.each do |u| %>
+                <p><strong><%= display_datetime(u.created_at) %>:</strong> <%= u.username %> joined the site!</p>
               <% end %>
           </div>
           <div class="col-md-6">
-            <% User.all.limit(5).reverse.each do |u| %>
-              <p><%= u.created_at %>: <%= u.username %> joined the site!</p>
-            <% end %>
+            <% current_user.favorites.limit(5).reverse.each do |f| %>
+                <% if Course.find(f.course_id).posts.last %>   
+                   <p>
+                    <strong><%= User.find(Course.find(f.course_id).posts.last.user_id).username %></strong> posted in <%= link_to Course.find(f.course_id).name, school_course_path(School.find(Course.find(f.course_id).school_id),Course.find(f.course_id)) %> at <%= School.find(Course.find(f.course_id).school_id).name %></p>
+                <% end %>
+              <% end %>
+
+
           </div>
         </div>
       </div>
