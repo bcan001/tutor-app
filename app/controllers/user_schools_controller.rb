@@ -20,10 +20,16 @@ class UserSchoolsController < ApplicationController
 	end
 
 	def destroy
-		@user_school = User.find(session[:user_id]).schools.build(:school_id => params[:school_id])
+		@user = User.find(session[:user_id]) if session[:user_id]
+
+		# binding.pry
+		@user_school = User.find(session[:user_id]).schools.find(params[:id])
+
+		# @friendship = User.find(session[:user_id]).friendships.find(params[:friend_id])
+
 		@user_school.destroy
 		flash[:notice] = "School removed from list"
-		redirect_to root_path
+		redirect_to user_path(@user)
 	end
 
 end

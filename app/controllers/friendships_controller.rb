@@ -7,7 +7,7 @@ class FriendshipsController < ApplicationController
 			redirect_to my_schools_path(@user)
 		else
 			flash[:notice] = "Unable to add friend"
-			render 'new'
+			redirect_to my_schools_path(@user)
 		end
 	end
 

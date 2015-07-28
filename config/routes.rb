@@ -40,7 +40,7 @@ Rails.application.routes.draw do
 
   get '/users/:id/selectschool', to: 'user_schools#new', as: 'select_school'
   post '/users/:id/selectschool', to: 'user_schools#create', as: 'user_schools'
-  delete '/users/:id/selectschool', to: 'user_schools#destroy', as: 'destroy_school_assoc'
+  delete '/users/:id', to: 'user_schools#destroy', as: 'destroy_school_assoc'
   get '/allusers', to: 'users#index', as: 'users_show'
   # post '/users/:friend_id/friendships', to: 'friendships#create', as: 'friendships'
   # delete '/users/:friend_id/friendships', to: 'friendships#destroy', as: 'destroy_friend'

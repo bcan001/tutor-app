@@ -10,7 +10,7 @@
 			<% @user.posts.limit(5).each do |p| %>
 				<div class="well" style="background:white;">
 					<p><strong><%= display_datetime(p.created_at) %></strong></p>
-					<p><%= p.school.name %></p>
+					<p><%= link_to p.school.name, school_path(p.school) %></p>
 					<p><%= p.course.name %></p>
 					<p><strong><%= p.title %></strong></p>
 					<p><%= p.description %></p>
@@ -32,7 +32,7 @@
 						<% f.friend.schools.limit(1).each do |p| %>
 							<p><%= p.name %></p>
 						<% end %>
-						<p><%= link_to 'Stop Following', destroy_friend_path(f), :method => :delete %></p>
+						<p><%= link_to 'Stop Following', destroy_friend_path(f), :method => :delete, class: 'btn btn-primary' %></p>
 					</div>
 					</br>
 				<% end %>
