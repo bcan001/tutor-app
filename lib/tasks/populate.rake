@@ -36,12 +36,12 @@ namespace :populate do
   desc "add associations"
   task get_associations: :environment do 
     @user_id_bucket = (1..100)
-    @school_id_bucket = (1..7764)
-    @course_id_bucket = (1..5000)
+    @school_id_bucket = (1..6514)
+    @course_id_bucket = (1..1000)
     @course_name_bucket = ["Math 101","English 100","Calculus 1","Calculus 2","Calculus 3","Biology 200","Computer Science Intro","Business 120","Physics 300","Physics Lab 1","Art- Drawing 1","Art- Drawing 2","Physiology 100","Psychology 240","Ice Hockey Intro","Basket Weaving","Gym 320","Health and Safety 1","Biomedical Engineering Intro","Computer Security 101","Game Development for Programmers","Software Engineering 400","Public Safety","Human Anatomy"]
 
     # create courses
-    2000.times {Course.create(name: @course_name_bucket.sample, description: "N/A", school_id: rand(@school_id_bucket))}
+    1000.times {Course.create(name: @course_name_bucket.sample, description: "N/A", school_id: rand(@school_id_bucket))}
 
     # add school associations to users
     300.times {UserSchool.create(user_id: rand(@user_id_bucket), school_id: rand(@school_id_bucket))}
