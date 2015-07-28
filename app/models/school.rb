@@ -6,6 +6,12 @@ class School < ActiveRecord::Base
 	# has many Courses
 	has_many :courses
 
-	has_many :postss
+	has_many :posts
+
+	validates :name, presence: true, uniqueness: true
+	validates :location, presence: true
+	validates :state, presence: true
+
+
 	
 end

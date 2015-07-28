@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/users/:id', to: 'users#show', as: 'user'
 
+
+  get '/users/:id/edit', to: 'users#edit', as: 'edit_profile'
+  put '/users/:id', to: 'users#edit'
+  patch '/users/:id', to: 'users#update'
+
+
   resources :schools do
     resources :courses do
       post '/favorite', to: 'favorites#create'

@@ -7,20 +7,20 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.delete_all
-School.delete_all
-Course.delete_all
-UserSchool.delete_all
-UserCourse.delete_all
-Post.delete_all
-IsTutor.delete_all
-Friendship.delete_all
+# User.delete_all
+# School.delete_all
+# Course.delete_all
+# UserSchool.delete_all
+# UserCourse.delete_all
+# Post.delete_all
+# IsTutor.delete_all
+# Friendship.delete_all
 
 
-User.create(id: 1, first_name: "Benjamin", last_name: "Caneba", email: "bcaneba@gmail.com", phone: "9062314010", username: "bcaneba", password: "theanswer", tutor: false)
+# User.create(id: 1, first_name: "Benjamin", last_name: "Caneba", email: "bcaneba@gmail.com", phone: "9062314010", username: "bcaneba", password: "theanswer", tutor: false)
 
 #create a school, add 3 courses to it
-School.create(id: 1, name: "Michigan State University", location: "East Lansing", state: "MI")
+# School.create(id: 1, name: "Michigan State University", location: "East Lansing", state: "MI")
 School.create(id: 2, name: "Minnesota State University", location: "Minneapolis", state: "MN")
 School.create(id: 3, name: "Oklahoma State University", location: "Ok City", state: "OK")
 School.create(id: 4, name: "Delaware State University", location: "Dover", state: "DE")

@@ -10,18 +10,19 @@ class UserSchoolsController < ApplicationController
 		@user = User.find(session[:user_id]) if session[:user_id]
 		@user_school = User.find(session[:user_id]).user_school.build(:school_id => params[:user_school][:school_id])
 		if @user_school.save
-			flash[:notice] = "school added to your list"
+			flash[:notice] = "School added to your list"
 			redirect_to user_path(@user)
 		else
 			flash[:notice] = "Unable to add school to your list"
-			render 'new'
+			redirect_to user_path(@user)
+			
 		end
 	end
 
 	def destroy
 		@user_school = User.find(session[:user_id]).schools.build(:school_id => params[:school_id])
 		@user_school.destroy
-		flash[:notice] = "school removed from user id"
+		flash[:notice] = "School removed from list"
 		redirect_to root_path
 	end
 

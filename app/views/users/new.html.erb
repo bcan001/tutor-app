@@ -7,26 +7,8 @@
 
     <div class="col-md-6">
 
-      <div class="well" style="background:white;">
-
-        <%= form_for @user do |f| %>
-
-          <p><%= f.text_field :first_name, :size => 40, :placeholder => "First Name" %></p>
-        
-          <p><%= f.text_field :last_name, :size => 40, :placeholder => "Last Name" %></p>
-
-          <p><%= f.text_field :email, :size => 40, :placeholder => "Email" %></p>
-
-          <p><%= f.text_field :phone, :size => 40, :placeholder => "Phone" %></p>
-
-          <p><%= f.text_field :username, :size => 40, :placeholder => "Username" %></p>
-         
-          <p><%= f.password_field :password, :size => 40, :placeholder => "Password" %></p>
-
-          <p><%= f.submit 'Sign Up', class: "btn btn-primary" %></p>
-
-        <% end %>
-      </div>
+      <%= render 'form' %>
+     
     </div>
     <div class="col-md-3">
     </div>

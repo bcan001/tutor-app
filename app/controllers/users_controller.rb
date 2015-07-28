@@ -8,6 +8,8 @@ class UsersController < ApplicationController
 	end
 	def new
 		@user = User.new
+		@button = "Sign Up"
+
 	end
 	def create
 		@user = User.new(user_params)
@@ -17,15 +19,28 @@ class UsersController < ApplicationController
 			flash[:notice] = "User Successfully created"
 			redirect_to root_path
 		else
-			@error = "Please fill in the fields correctly to create a user"
+      flash[:notice] = "Please fill in the fields correctly to create a user"
 			render 'new'
 		end
 	end
+
 	def edit
+		@user = User.find(session[:user_id]) if session[:user_id]
+		@button = "Update"
 	end
 	def update
+		@user = User.find(session[:user_id]) if session[:user_id]
+		if @user.update(user_params)
+      flash[:notice] = 'User updated successfully'
+      redirect_to user_path(@user)
+	   else
+	   	flash[:notice] = 'Failure to update user'
+	    render :edit
+	   end
 	end
+
 	def destroy
+		
 	end
 
 	def profile_schools

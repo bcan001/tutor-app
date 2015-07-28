@@ -12,6 +12,9 @@
 
 <div class="container" id="central-body">
 	<div style="text-align:center;">
+		<% if flash[:notice] %>
+			<p style="color:red;">*<%= flash[:notice] %></p>
+		<% end %>
 		<%= yield %>
 	</div>
 </div>

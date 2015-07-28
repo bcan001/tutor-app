@@ -16,9 +16,11 @@ class SchoolsController < ApplicationController
 		@school = School.new(school_params)
 		if @school.save
 			flash[:notice] = "School Successfully created"
+			UserSchool.create(user_id: @user.id, school_id: @school.id)
 			redirect_to user_path(@user)
 		else
-			@error = "Please fill in the fields correctly to create a new school"
+			flash[:notice] = "Please fill in the proper fields"
+			
 			render 'new'
 		end
 	end
@@ -35,7 +37,7 @@ class SchoolsController < ApplicationController
 
 	private
 	def school_params
-		params.require(:school).permit!
+		params.require(:school).permit(:name, :location, :state)
 	end
 
 end
