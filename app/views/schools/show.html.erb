@@ -8,7 +8,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-    	<h2>Available Courses:</h2>
+    	<h3>Available Courses:</h3>
       </br>
       <div class="well" style="background:white;">
 
@@ -17,7 +17,7 @@
   			<% end %>
       </div>
       </br>
-      <h3>Don't see your course?</h3>
+      <h4>Don't see your course?</h4>
       <% if current_user %>
         <%= link_to 'add your course', new_school_course_path(@school) %>
       <% else %>
@@ -28,10 +28,13 @@
 
     <div class="col-md-6">
       <h3>Students at <%= @school.name %>:</h3>
-      <% @users.each do |u| %>
-        <p><%= u.username %></p>
-      <% end %>
+      </br>
+      <div class="well" style="background:white;">
 
+        <% @users.each do |u| %>
+          <p><%= link_to u.username, other_user_path(u) %></p>
+        <% end %>
+      </div>
     </div>
 
    </div>

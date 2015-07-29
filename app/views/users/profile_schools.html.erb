@@ -27,10 +27,10 @@
 					<div class="well" style="background:white;">
 						<%= gravatar_image_tag(f.friend.email) %>
 						
-						<p><%= f.friend.username %></p>
+						<p><%= link_to f.friend.username, other_user_path(f.friend) %></p>
 						<p><%= f.friend.email %></p>
 						<% f.friend.schools.limit(1).each do |p| %>
-							<p><%= p.name %></p>
+							<p><%= link_to p.name, school_path(p) %></p>
 						<% end %>
 						<p><%= link_to 'Stop Following', destroy_friend_path(f), :method => :delete, class: 'btn btn-primary' %></p>
 					</div>

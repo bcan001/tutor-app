@@ -49,6 +49,12 @@ class UsersController < ApplicationController
 		@courses = Course.all
 	end
 
+	def view_other_user
+		# binding.pry
+		@user = User.find(params[:id])
+		@schools = @user.schools
+	end
+
 	private
 	def user_params
 		params.require(:user).permit(:username, :password, :first_name, :last_name, :email, :phone)

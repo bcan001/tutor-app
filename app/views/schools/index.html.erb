@@ -16,7 +16,7 @@
             <% current_user.favorites.limit(5).reverse.each do |f| %>
                 <% if Course.find(f.course_id).posts.last %>   
                    <p>
-                    <strong><%= User.find(Course.find(f.course_id).posts.last.user_id).username %></strong> posted in <%= link_to Course.find(f.course_id).name, school_course_path(School.find(Course.find(f.course_id).school_id),Course.find(f.course_id)) %> at <%= School.find(Course.find(f.course_id).school_id).name %></p>
+                    <strong><%= link_to User.find(Course.find(f.course_id).posts.last.user_id).username, other_user_path(User.find(Course.find(f.course_id).posts.last.user_id)) %></strong> posted in <%= link_to Course.find(f.course_id).name, school_course_path(School.find(Course.find(f.course_id).school_id),Course.find(f.course_id)) %> at <%= School.find(Course.find(f.course_id).school_id).name %></p>
                 <% end %>
               <% end %>
 

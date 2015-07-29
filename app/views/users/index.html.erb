@@ -8,9 +8,13 @@
 	<div class="inline">
 		<div class="well" style="background:white;">
 			<%= gravatar_image_tag(u.email) %>
-			<p><%=u.username %></p>
+			<p><%= link_to u.username, other_user_path(u) %></p>
+
+			<% u.schools.limit(1).each do |s| %>
+				<p><%= link_to s.name, school_path(s) %></p>
+			<% end %>
 			
-			<p><%= link_to "Follow #{u.username}", friendships_path(:friend_id => u), :method => :post %></p>
+			<p><%= link_to "Follow #{u.username}", friendships_path(:friend_id => u), :method => :post, class: 'btn btn-primary' %></p>
 		</div>
 	</div>
 <% end %>

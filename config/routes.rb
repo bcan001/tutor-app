@@ -47,12 +47,16 @@ Rails.application.routes.draw do
   # patch '/users/:friend_id/friendships', to: 'friendships#accept_friend', as: 'accept_friendship'
 
 
+  # delete '/users/:id', to: 'favorites#destroy', as: 'destroy_course_assoc'
+
+
+
   post '/users/:friend_id/friendships', to: 'friendships#create', as: 'friendships'
   delete '/users/:friend_id/friendships', to: 'friendships#destroy', as: 'destroy_friend'
   patch '/users/:friend_id/friendships', to: 'friendships#accept_friend', as: 'accept_friendship'
 
 
-  
+  get '/other_user/:id', to: 'users#view_other_user', as: 'other_user'
 
 
 
