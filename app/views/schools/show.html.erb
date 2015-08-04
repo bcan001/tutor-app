@@ -1,5 +1,10 @@
-<h1><%= @school.name %></h1>
+<%= render 'shared/title', title: "#{@school.name}" %>
 <h3><%= @school.location %>, <%= @school.state %></h3>
+
+<% if flash[:notice] %>
+  <p class="notice" style="color:red;"><%= flash[:notice] %></p>
+<% end %>
+</br>
 
 
 </br>

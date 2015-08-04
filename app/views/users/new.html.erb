@@ -1,4 +1,8 @@
-<h1>Sign Up for CourseDiscuss</h1>
+<%= render 'shared/title', title: "Sign Up for CourseDiscuss" %>
+
+<% if flash[:notice] %>
+  <p class="notice" style="color:red;"><%= flash[:notice] %></p>
+<% end %>
 </br>
 <div class="container">
   <div class="row">

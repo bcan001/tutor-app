@@ -1,4 +1,8 @@
-<h3>Create a New Course</h3>
+<%= render 'shared/title', title: "Create a New Course" %>
+</br>
+<% if flash[:notice] %>
+  <p class="notice" style="color:red;"><%= flash[:notice] %></p>
+<% end %>
 </br>
 
 <!-- [@school,@course,@course.posts.build] -->

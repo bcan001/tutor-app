@@ -1,7 +1,9 @@
-<h1>About</h1>
+<%= render 'shared/title', title: "About" %>
 </br>
+<% if flash[:notice] %>
+  <p class="notice" style="color:red;"><%= flash[:notice] %></p>
+<% end %>
 </br>
-
 
 <div class="container">
   <div class="row">

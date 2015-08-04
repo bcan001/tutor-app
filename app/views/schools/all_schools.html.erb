@@ -1,4 +1,9 @@
-<h3>All Schools:</h3>
+<%= render 'shared/title', title: "All Supported Schools" %>
+
+<% if flash[:notice] %>
+  <p class="notice" style="color:red;"><%= flash[:notice] %></p>
+<% end %>
+</br>
 
 <h5>This is a list of all the schools currently supported by the site. If you don't see your school, please register and get your school connected!</h5>
 </br>

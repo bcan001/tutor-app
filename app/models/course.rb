@@ -7,7 +7,7 @@ class Course < ActiveRecord::Base
 	has_many :users, :through => :user_course
 
 
-	has_many :posts
+	has_many :posts, dependent: :destroy
 	has_many :is_tutors
 
 

@@ -1,4 +1,9 @@
-<h1><%= @course.name %> at <%= @school.name %></h2>
+<%= render 'shared/title', title: "#{@course.name} at #{@school.name}" %>
+<% if flash[:notice] %>
+  <p class="notice" style="color:red;"><%= flash[:notice] %></p>
+<% end %>
+</br>
+
 </br>
 <% if current_user %>
 	<p><%= link_to 'add this course to favorites', school_course_favorite_path(@course,@school), method: :post, class: "btn btn-primary" %></p>

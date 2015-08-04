@@ -1,4 +1,9 @@
-<h1>Login to CourseDiscuss</h1>
+<%= render 'shared/title', title: "Login to CourseDiscuss" %>
+</br>
+
+<% if flash[:notice] %>
+  <p class="notice" style="color:red;"><%= flash[:notice] %></p>
+<% end %>
 </br>
 
 <div class="container">

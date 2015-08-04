@@ -23,11 +23,16 @@ class UserSchoolsController < ApplicationController
 		@user = User.find(session[:user_id]) if session[:user_id]
 
 		# binding.pry
-		@user_school = User.find(session[:user_id]).schools.find(params[:id])
+		@user_school = User.find(session[:user_id]).user_school.find(params[:id])
 
 		# @friendship = User.find(session[:user_id]).friendships.find(params[:friend_id])
 
 		@user_school.destroy
+
+		# @favorites = Favorite.where({user_id: @user.id, course_id: }).delete_all
+
+
+
 		flash[:notice] = "School removed from list"
 		redirect_to user_path(@user)
 	end

@@ -1,4 +1,9 @@
-<h2>Select a School to add to your list:</h2>
+<%= render 'shared/title', title: "Select a School to Add to Your List" %>
+</br>
+
+<% if flash[:notice] %>
+  <p class="notice" style="color:red;"><%= flash[:notice] %></p>
+<% end %>
 </br>
 
 <div class="container">

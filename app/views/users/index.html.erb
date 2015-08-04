@@ -1,4 +1,8 @@
-<h2>All Students:</h2>
+<%= render 'shared/title', title: "All Students" %>
+<% if flash[:notice] %>
+  <p class="notice" style="color:red;"><%= flash[:notice] %></p>
+<% end %>
+</br>
 
 <h5>This is a list of all the students that have signed up to use the website.</h5>
 </br>

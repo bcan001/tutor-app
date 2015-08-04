@@ -1,5 +1,9 @@
-<h1>My Activity</h1>
+<%= render 'shared/title', title: "My Activity" %>
+
 </br>
+<% if flash[:notice] %>
+  <p class="notice" style="color:red;"><%= flash[:notice] %></p>
+<% end %>
 </br>
 
 <div class="container">

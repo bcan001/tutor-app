@@ -1,6 +1,11 @@
 <h1><%= @school.name %></h1>
 <h3><%= @course.name %></h3>
 
+<% if flash[:notice] %>
+  <p class="notice" style="color:red;"><%= flash[:notice] %></p>
+<% end %>
+</br>
+
 <h4>Create a new post for this course</h4>
 </br>
 

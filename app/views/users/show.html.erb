@@ -1,5 +1,9 @@
-<h1>My Profile Page</h1>
+<%= render 'shared/title', title: "My Profile Page" %>
+
 </br>
+<% if flash[:notice] %>
+  <p class="notice" style="color:red;"><%= flash[:notice] %></p>
+<% end %>
 </br>
 
 
@@ -31,7 +35,7 @@
 					<div class="well" style="background:white;">
 
 						<% @schools.each do |s| %>
-							<h4><%= link_to s.name, school_path(s) %> <%= link_to 'remove', destroy_school_assoc_path(s), :method => :delete , class: 'btn btn-primary'%></h4>
+							<h4><%= link_to s.name, school_path(s) %> </h4>
 						<% end %>
 					</div>
 					<%= link_to "Add a new school to my list", select_school_path(@user)%>
@@ -45,6 +49,7 @@
 					<div class="well" style="background:white;">
 						<% @user.favorites.each do |f| %>
 							<p><%= link_to Course.find(f.course_id).name, school_course_path(School.find(Course.find(f.course_id).school_id),Course.find(f.course_id)) %>, <%= link_to School.find(Course.find(f.course_id).school_id).name, school_path(School.find(Course.find(f.course_id).school_id)) %></p>
+
 						<% end %>
 					</div>
 

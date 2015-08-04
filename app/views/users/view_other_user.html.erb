@@ -1,6 +1,10 @@
 
-<h1>Profile Page for <%= @user.username %></h1>
+<%= render 'shared/title', title: "Profile Page for #{@user.username}" %>
+
 </br>
+<% if flash[:notice] %>
+  <p class="notice" style="color:red;"><%= flash[:notice] %></p>
+<% end %>
 </br>
 
 
