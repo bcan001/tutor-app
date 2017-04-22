@@ -2,27 +2,19 @@ source 'https://rubygems.org'
 
 ruby '2.2.0'
 
-
 gem 'populator'
 gem 'faker'
-
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
-
 
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
-
 gem 'gravatar_image_tag'
-
-
 
 gem 'pry-rails'
 gem 'pry-nav'
-
 gem 'bcrypt'
-
 gem 'rspec-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
